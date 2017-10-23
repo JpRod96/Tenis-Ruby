@@ -30,6 +30,8 @@ class TenisScore
 			output=0
 		when 1
 			output=15
+		when 2
+			output=30
 		else
 			output=40+value
 		end
