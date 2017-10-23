@@ -14,4 +14,9 @@ describe TenisScore do
 		expect(@score.showResult()).to eq('15 0')
 	end
 
+	it "should return 0 15" do
+		@score.pointForJ2()
+		expect(@score.showResult()).to eq('0 15')
+	end
+
 end
