@@ -14,13 +14,24 @@ class TenisScore
 	end
 
 	def showResult()
-		if(@countJ1==1) then
-			"15 0"
-		else if(@countJ2==1) then
-			"0 15"
+		pointsJ1=convertToPoints(@countJ1)
+		pointsJ2=convertToPoints(@countJ2)
+		equals=(pointsJ1 == pointsJ2)
+		if(equals) then
+			pointsJ1.to_s+' iguales'
 		else
-			"0 iguales"
+			pointsJ1.to_s+' '+pointsJ2.to_s
 		end
+	end
+
+	def convertToPoints(value)
+		case value
+		when 0
+			output=0
+		when 1
+			output=15
+		else
+			output=40+value
 		end
 	end
 
