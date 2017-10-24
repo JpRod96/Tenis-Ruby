@@ -47,4 +47,13 @@ describe TenisScore do
 		expect(@score.showResult()).to eq('30 iguales')
 	end
 
+	it "should return Game for J2" do
+		@score.pointForJ2()
+		@score.pointForJ2()
+		@score.pointForJ2()
+		@score.pointForJ2()
+		@score.pointForJ1()
+		expect(@score.showResult()).to eq('Game for J2')
+	end
+
 end
