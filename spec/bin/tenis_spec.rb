@@ -66,4 +66,15 @@ describe TenisScore do
 		expect(@score.showResult()).to eq('Deuce')
 	end
 
+	it "should return Advantage for J1" do
+		@score.pointForJ2()
+		@score.pointForJ2()
+		@score.pointForJ2()
+		@score.pointForJ1()
+		@score.pointForJ1()
+		@score.pointForJ1()
+		@score.pointForJ1()
+		expect(@score.showResult()).to eq('Advantage for J1')
+	end
+
 end

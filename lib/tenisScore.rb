@@ -27,18 +27,35 @@ class TenisScore
 
 	def messageForEqualsPoints(pointsJ1)
 		if (pointsJ1>=40) then
-				'Deuce'
-			else
-				pointsJ1.to_s+' iguales'
-			end
+			'Deuce'
+		else
+			pointsJ1.to_s+' iguales'
+		end
 	end
 
 	def messageForNotEqualsPoints(pointsJ1,pointsJ2)
 		difference=(@countJ1-@countJ2)
 		if(difference.abs<2)
-			pointsJ1.to_s+' '+pointsJ2.to_s
+			messageForShortDifference(pointsJ1,pointsJ2)
 		else 
 			messageForBigDifference(difference)
+		end
+	end
+
+	def messageForShortDifference(pointsJ1,pointsJ2)	
+		if (pointsJ1>=40) then
+			difference=pointsJ1-pointsJ2
+			messageAdvantageFor(difference)
+		else
+			pointsJ1.to_s+' '+pointsJ2.to_s
+		end
+	end
+
+	def messageAdvantageFor(difference)
+		if (difference>0 )then
+			'Advantage for J1'
+		else
+			'Advantage for J2'
 		end
 	end
 
