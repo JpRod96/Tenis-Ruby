@@ -56,4 +56,14 @@ describe TenisScore do
 		expect(@score.showResult()).to eq('Game for J2')
 	end
 
+	it "should return Deuce" do
+		@score.pointForJ2()
+		@score.pointForJ2()
+		@score.pointForJ2()
+		@score.pointForJ1()
+		@score.pointForJ1()
+		@score.pointForJ1()
+		expect(@score.showResult()).to eq('Deuce')
+	end
+
 end
