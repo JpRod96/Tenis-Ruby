@@ -16,18 +16,29 @@ class TenisScore
 	def showResult()
 		pointsJ1=convertToPoints(@countJ1)
 		pointsJ2=convertToPoints(@countJ2)
-		difference=(@countJ1-@countJ2)
+		difference=(pointsJ1-pointsJ2)
 		equals=(difference==0)
 		if(equals) then
 			pointsJ1.to_s+' iguales'
-		else if(difference.abs<2)
+		else 
+			messageForNotEqualsPoints(pointsJ1,pointsJ2)
+		end
+	end
+
+	def messageForNotEqualsPoints(pointsJ1,pointsJ2)
+		difference=(@countJ1-@countJ2)
+		if(difference.abs<2)
 			pointsJ1.to_s+' '+pointsJ2.to_s
-			else if(difference>0) then
-					'Game for J1'
-				else
-					'Game for J2'
-				end
-			end
+		else 
+			messageForBigDifference(difference)
+		end
+	end
+
+	def messageForBigDifference(difference)
+		if(difference>0) then
+			'Game for J1'
+		else
+			'Game for J2'
 		end
 	end
 
