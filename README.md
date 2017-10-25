@@ -1,1 +1,1 @@
-https://travis-ci.org/JpRod96/Tenis-Ruby.svg?branch=develop
+[![Build Status](https://travis-ci.org/JpRod96/Tenis-Ruby.svg?branch=master)](https://travis-ci.org/JpRod96/Tenis-Ruby)
